@@ -2,33 +2,19 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 )
 
 func main() {
 
-	// variables && types && pointers
-	var name string = "Demir"
-	var namePointer *string = &name
-	fmt.Println(name, namePointer, *namePointer)
+	var productName string = "Laptop"
+	var productPrice float64 = 5000.50
+	var productQuantity int = 10
+	var productAvailable bool = true
 
-	fmt.Println(tr, usd, euro, gbp)
+	fmt.Println("Product Name: ",
+		productName, reflect.TypeOf(productName))
 
-	// arrays
-	arr := [...]int{1, 2, 3, 4, 5}
-	slice := arr[1:3]
-	fmt.Println("len =>", len(arr), "cap =>", cap(arr), "sliece =>", slice)
-
-	// maps
-	m := map[string]int{"istanbul": 1}
-	m["ankara"] = 2
-	fmt.Println(m, "/////", m["istanbul"], m["ankara"])
+	fmt.Printf("Product Name: %v, Product Price %v ,Product Quantity %v, Product Available %v\n", productName, productPrice, productQuantity, productAvailable)
 
 }
-
-// iota
-const (
-	tr = iota + 1
-	usd
-	euro
-	gbp
-)
